@@ -11,7 +11,11 @@ def root():
 @app.post("/analyse")
 async def analyse_resume(
     file : UploadFile = File(...),
-    Job_description : str = Form(...)
+    job_description : str = Form(...)
 ):
+    file_bytes = await file.read()
+    resume_text = extract_text(file_bytes, file.filename)
+    result = match_resume_to_job(resume_text, job_description)
+    return { "analysis " : result}
 
     
