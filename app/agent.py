@@ -13,7 +13,7 @@ SYSTEM_PROMPT= """ you are a resume screening assistant. Compare the given resum
 """
 
 agent = create_agent(
-    model="google_genai:gemini-2.5-flash",
+    model="google_genai:gemini-3.6-flash",
     system_prompt=SYSTEM_PROMPT,
 )
 

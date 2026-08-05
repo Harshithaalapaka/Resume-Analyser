@@ -12,7 +12,7 @@ def extract_text(file_data : bytes, file_name :str)-> str:
 
 def _extract_pdf(file_data:bytes) -> str:
     text=[]
-    with pdfplumber.open(io.BytesIO(filebytes)) as pdf:
+    with pdfplumber.open(io.BytesIO(file_data)) as pdf:
         for page in pdf.pages:
             page_text=page.extract_text()
             if page_text:
