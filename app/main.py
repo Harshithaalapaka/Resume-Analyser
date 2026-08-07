@@ -16,6 +16,6 @@ async def analyse_resume(
     file_bytes = await file.read()
     resume_text = extract_text(file_bytes, file.filename)
     result = match_resume_to_job(resume_text, job_description)
-    return { "analysis " : result}
+    return { "analysis" : result}
 
     
